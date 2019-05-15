@@ -4,12 +4,7 @@ import "fmt"
 import "bufio"
 import "os"
 import "log"
-
-func shell() string {
-	var first string
-	fmt.Scanln(&first)
-	return first
-}
+import "./shell"
 
 func main() {
 
@@ -25,7 +20,7 @@ func main() {
 		}
 	} else {
 		for {
-			fmt.Println(shell())
+			fmt.Println(shell.Shell())
 		}
 	}
 
