@@ -1,20 +1,29 @@
 package shell
 
 import "fmt"
+import "bufio"
 import "os"
 import "strings"
 
-func Shell() string {
-	var command string
-	fmt.Print("$ ")
-	fmt.Scanln(&command)
-	words := strings.Fields(command)
-	switch {
-	case words[0] == "quit":
-		os.Exit(3)
-	default:
+import "./bget"
 
-		return command
+func Shell() string {
+	reader := bufio.NewReader(os.Stdin)
+	for {
+		fmt.Print("$ ")
+		text, _ := reader.ReadString('\n')
+		text = strings.Replace(text, "\n", "", -1)
+		words := strings.Fields(text)
+		fmt.Print(words, len(words))
+		switch {
+		case words[0] == "quit":
+			os.Exit(3)
+		case words[0] == "bget":
+			fmt.Println(bget.Web(words[1]))
+		default:
+			fmt.Println(words)
+		}
 	}
-	return command
+
+	return "exit"
 }
