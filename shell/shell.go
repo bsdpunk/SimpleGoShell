@@ -3,10 +3,9 @@ package shell
 import (
 	"bufio"
 	"fmt"
+	//	"github.com/bsdpunk/SimpleGoShell/shell/bget"
 	"os"
 	"strings"
-
-	"github.com/bsdpunk/SimpleGoShell/shell/bget"
 )
 
 func Shell() string {
@@ -21,7 +20,8 @@ func Shell() string {
 		case words[0] == "quit":
 			os.Exit(3)
 		case words[0] == "bget":
-			fmt.Println(bget.Web(words[1]))
+			//fmt.Println(bget.Web(words[1]))
+			fmt.Println("No bget")
 		default:
 			fmt.Println(words)
 		}
