@@ -1,11 +1,13 @@
 package shell
 
-import "fmt"
-import "bufio"
-import "os"
-import "strings"
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strings"
 
-import "./bget"
+	"github.com/bsdpunk/SimpleGoShell/shell/bget"
+)
 
 func Shell() string {
 	reader := bufio.NewReader(os.Stdin)

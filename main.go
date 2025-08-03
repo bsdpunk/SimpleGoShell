@@ -1,10 +1,13 @@
 package main
 
-import "fmt"
-import "bufio"
-import "os"
-import "log"
-import "./shell"
+import (
+	"bufio"
+	"fmt"
+	"log"
+	"os"
+
+	"github.com/bsdpunk/SimpleGoShell/shell"
+)
 
 func main() {
 
